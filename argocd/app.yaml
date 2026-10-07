@@ -12,6 +12,9 @@ spec:
     path: k8s
     # Target revision
     targetRevision: HEAD
+  syncPolicy:
+    # Definindo a política de sincronização
+    automated: {}
   # Agora vamos definir o ambiente que vai ser usado
   destination:
     namespace: webcolor
