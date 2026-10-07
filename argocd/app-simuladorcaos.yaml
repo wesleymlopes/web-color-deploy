@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/veronez-dev/web-page-deploy.git
-    path: k8s/caos
+    repoURL: https://github.com/wesleymlopes/web-color-deploy
+    path: caos
     targetRevision: HEAD
   destination:
     namespace: caos
