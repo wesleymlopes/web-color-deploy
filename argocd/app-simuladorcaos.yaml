@@ -16,6 +16,13 @@ spec:
     automated: 
       prune: true
       selfHeal: true
+    syncOptions:
+    - Validate=false
+    - CreateNamespace=true
+    - PruneProgamatically=true
+    - PruneLast=true
+    - RespectIgnoreDifferences=true
+    - applyOutOfSyncOnly=true
   ignoreDifferences:
   - group: apps
     kind: Deployment
