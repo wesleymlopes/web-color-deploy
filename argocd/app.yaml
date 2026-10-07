@@ -12,6 +12,7 @@ spec:
     path: k8s
     # Target revision
     targetRevision: HEAD
+  revisionHistoryLimit: 4
   syncPolicy:
     # Definindo a política de sincronização
     automated: {}
