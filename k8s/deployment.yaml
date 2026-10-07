@@ -12,7 +12,7 @@ spec:
         app: webcolor
     spec:
       imagePullSecrets:
-      - name: ocirsecret
+      - name: ocir-secret
       containers:
       - name: webcolor
         image: gru.ocir.io/grglog7bpvjm/web-color:blue
