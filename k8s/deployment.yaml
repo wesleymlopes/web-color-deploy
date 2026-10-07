@@ -15,7 +15,7 @@ spec:
       - name: ocir-secret
       containers:
       - name: webcolor
-        image: gru.ocir.io/grglog7bpvjm/web-color:green
+        image: gru.ocir.io/grglog7bpvjm/web-color:blue
         ports:
         - containerPort: 80
 ---
