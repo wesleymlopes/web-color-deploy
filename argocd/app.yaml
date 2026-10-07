@@ -15,7 +15,10 @@ spec:
   revisionHistoryLimit: 4
   syncPolicy:
     # Definindo a política de sincronização
-    automated: {}
+    automated:
+      # Permitindo a sincronização automática
+      prune: true
+      selfHeal: true
   # Agora vamos definir o ambiente que vai ser usado
   destination:
     namespace: webcolor
