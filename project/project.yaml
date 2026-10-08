@@ -17,10 +17,11 @@ spec:
     - kind: '*'
       group: '*'
   syncWindows:
-  - kind: allow
+  - kind: deny
     timeZone: America/Sao_Paulo
     schedule: "0 16 * * *"
     duration: 2h
+    manualSync: true
     applications:
     - web-color
   
