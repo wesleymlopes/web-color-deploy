@@ -4,7 +4,7 @@ metadata:
   name: web-color
   namespace: argocd
 spec:
-  project: default
+  project: exemplo-project
   source:
     repoURL: https://github.com/wesleymlopes/web-color-deploy
     path: k8s
