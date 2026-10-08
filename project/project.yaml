@@ -10,3 +10,9 @@ spec:
   destinations:
   - namespace: web-color
     server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+  - kind: 'Namespace'
+    group: ''
+  namespaceResourceBlacklist:
+  - kind: 'Ingress'
+    group: 'networking.k8s.io'
