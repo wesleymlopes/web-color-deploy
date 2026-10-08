@@ -1,7 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
-metadata: exemplo-project
-namespace: argocd
+metadata:
+  name: exemplo-project
+  namespace: argocd
 spec:
   description: Projeto de exemplo para a aula de Argocd
   sourceRepos:
