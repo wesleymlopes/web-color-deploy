@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata: exemplo-project
+namespace: argocd
+spec:
+  description: Projeto de exemplo para a aula de Argocd
+  sourceRepos:
+  - https://github.com/wesleymlopes/web-color-deploy
+  destinations:
+  - namespace: web-color
+    server: https://kubernetes.default.svc
