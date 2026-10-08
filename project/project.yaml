@@ -13,6 +13,14 @@ spec:
   clusterResourceWhitelist:
   - kind: 'Namespace'
     group: ''
-  namespaceResourceBlacklist:
-  - kind: 'Ingress'
-    group: 'networking.k8s.io'
+  namespaceResourceWhitelist:
+    - kind: '*'
+      group: '*'
+  syncWindows:
+  - kind: allow
+    timeZone: America/Sao_Paulo
+    schedule: "0 16 * * *"
+    duration: 2h
+    applications:
+    - web-color
+  
