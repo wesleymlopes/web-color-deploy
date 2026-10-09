@@ -28,7 +28,7 @@ roles:
   - name: pipeline-sync
     description: role para sincronização automatica
     policies:
-    - p, proj:exemplo-project:pipeline-sync, applications, sync, default/*, allow
+    - p, proj:exemplo-project:pipeline-sync, applications, sync, *, allow
     - p, proj:exemplo-project:pipeline-sync, applications, get, *, allow
     groups:
     - pipeline
