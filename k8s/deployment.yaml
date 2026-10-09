@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ocir-secret
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJncnUub2Npci5pbyI6eyJ1c2VybmFtZSI6ImdyZ2xvZzdicHZqbS93ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJwYXNzd29yZCI6IjRRMmVNWENdS11pLkgxY2NhMWp0IiwiZW1haWwiOiJ3ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJhdXRoIjoiWjNKbmJHOW5OMkp3ZG1wdEwzZGxjMnhsZVVCaGFtOTBZV2x1Wm05eWJXRjBhV05oTG1OdmJTNWljam8wVVRKbFRWaERYVXRkYVM1SUJNVjBqVlRGY1JGMTZQVDA9In19fQ==
+--- 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
