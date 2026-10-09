@@ -32,11 +32,9 @@ spec:
       labels:
         app: webcolor
     spec:
-      imagePullSecrets:
-        - name: ocir-secret
       containers:
         - name: webcolor
-          image: fabricioveronez/web-color:green
+          image: fabricioveronez/web-color:blue
           ports:
             - containerPort: 80
 ---
