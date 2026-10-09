@@ -4,13 +4,14 @@ metadata:
   name: ocir-secret
 type: kubernetes.io/dockerconfigjson
 data:
-  .dockerconfigjson: eyJhdXRocyI6eyJncnUub2Npci5pbyI6eyJ1c2VybmFtZSI6ImdyZ2xvZzdicHZqbS93ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJwYXNzd29yZCI6IjRRMmVNWENdS11pLkgxY2NhMWp0IiwiZW1haWwiOiJ3ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJhdXRoIjoiWjNKbmJHOW5OMkp3ZG1wdEwzZGxjMnhsZVVCaGFtOTBZV2x1Wm05eWJXRjBhV05oTG1OdmJTNWljam8wVVRKbFRWaERYVXRkYVM1SUJNVjBqVlRGY1JGMTZQVDA9In19fQ==
---- 
+  .dockerconfigjson: eyJhdXRocyI6eyJncnUub2Npci5pbyI6eyJ1c2VybmFtZSI6ImdyZ2xvZzdicHZqbS93ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJwYXNzd29yZCI6IjRRMmVNWENdS11pLkgxY2NhMWp0IiwiZW1haWwiOiJ3ZXNsZXlAYWpvdGFpbmZvcm1hdGljYS5jb20uYnIiLCJhdXRoIjoiWjNKbmJHOW5OMkp3ZG1wdEwzZGxjMnhsZVVCaGFtOTBZV2x1Wm05eWJXRjBhV05oTG1OdmJTNWljam8wVVRKbFRWaERYVXRkYVM1SSBNV05qWVRGcWRBPT0ifX19
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webcolor
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: webcolor
@@ -20,12 +21,12 @@ spec:
         app: webcolor
     spec:
       imagePullSecrets:
-      - name: ocir-secret
+        - name: ocir-secret
       containers:
-      - name: webcolor
-        image: gru.ocir.io/grglog7bpvjm/web-color:blue
-        ports:
-        - containerPort: 80
+        - name: webcolor
+          image: gru.ocir.io/grglog7bpvjm/web-color:blue
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -35,8 +36,6 @@ spec:
   selector:
     app: webcolor
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 80
   type: LoadBalancer
-
-

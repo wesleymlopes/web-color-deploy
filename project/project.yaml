@@ -17,7 +17,7 @@ spec:
     - kind: '*'
       group: '*'
   syncWindows:
-  - kind: deny
+  - kind: allow
     timeZone: America/Sao_Paulo
     schedule: "* * * * *"
     duration: 2h
