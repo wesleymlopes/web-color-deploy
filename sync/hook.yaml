@@ -10,14 +10,14 @@ spec:
     spec:
       containers:
         - name: chamada
-          image: curlimages/curl:latest
+          image: docker.io/curlimages/curl:latest
           command:
             - /bin/sh
             - -c
             - |
               curl -X POST -H "Content-Type: application/json" \
               -d '{"message": "Entrou em Pre Sync !!!"}' \
-              https://webhook.site/44f17c3f-bffc-4219-bec5-ff84e2d83fea
+              https://webhook.site/1bf967db-820c-4c9a-8bcd-1fc457e4160b
       restartPolicy: Never
 ---
 apiVersion: batch/v1
@@ -32,14 +32,14 @@ spec:
     spec:
       containers:
         - name: chamada
-          image: curlimages/curl:latest
+          image: docker.io/curlimages/curl:latest
           command:
             - /bin/sh
             - -c
             - |
               curl -X POST -H "Content-Type: application/json" \
               -d '{"message": "Entrou em Sync !!!"}' \
-              https://webhook.site/44f17c3f-bffc-4219-bec5-ff84e2d83fea
+              https://webhook.site/1bf967db-820c-4c9a-8bcd-1fc457e4160b
       restartPolicy: Never
 ---
 apiVersion: batch/v1
@@ -54,12 +54,12 @@ spec:
     spec:
       containers:
         - name: chamada
-          image: curlimages/curl:latest
+          image: docker.io/curlimages/curl:latest
           command:
             - /bin/sh
             - -c
             - |
               curl -X POST -H "Content-Type: application/json" \
               -d '{"message": "Entrou em Post Sync !!!"}' \
-              https://webhook.site/44f17c3f-bffc-4219-bec5-ff84e2d83fea
+              https://webhook.site/1bf967db-820c-4c9a-8bcd-1fc457e4160b
       restartPolicy: Never
