@@ -31,5 +31,5 @@ roles:
       - p, proj:exemplo-project:pipeline-sync, applications, sync, *, allow
       - p, proj:exemplo-project:pipeline-sync, applications, get, *, allow
     groups:
-    - pipeline
+      - pipeline
   
