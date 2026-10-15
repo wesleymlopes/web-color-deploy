@@ -42,7 +42,11 @@ spec:
       - setWeight: 25
       - pause: {}
       - setWeight: 50
-      - pause: {duration: 30s}
+      - analysis:
+          templates:
+          - templateName: canary-analysis
       - setWeight: 75
-      - pause: {duration: 30s}
+      - analysis:
+          templates:
+          - templateName: canary-analysis
       - setWeight: 100
