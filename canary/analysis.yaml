@@ -1,20 +1,23 @@
+
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
   name: canary-analysis
+  namespace: webcolor
 spec:
   metrics:
     - name: canary-success-rate
       interval: 30s
       count: 6
-      successCondition: result > 90
-      failureCondition: result < 80
+      successCondition: result[0] > 90
+      failureCondition: result[0] < 80
       provider:
         prometheus:
-          address: http://prometheus-server.monitoramento.svc.cluster.local:80 
+          address: http://prometheus-server.monitoramento.svc.cluster.local:80
           query: |
             (
-              sum(rate(flask_http_request_total{app="webcolor", status=~"2.*"}[2m]))
+              100 *
+              sum(rate(flask_http_request_total{app="webcolor", status=~"2.."}[2m]))
               /
               sum(rate(flask_http_request_total{app="webcolor"}[2m]))
             ) or vector(0)
