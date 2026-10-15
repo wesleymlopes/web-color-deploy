@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/fabricioveronez/web-color-deploy.git
+    repoURL: https://github.com/wesleymlopes/web-color-deploy.git
     targetRevision: HEAD
     path: canary
   destination:
