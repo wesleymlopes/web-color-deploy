@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: canary
   destination:
-    server: https://kubernetes.default.svc
+    server: https://1ac86603-f225-4ab1-8852-a770e851dea0.k8s.ondigitalocean.com
     namespace: webcolor
   syncPolicy:
     syncOptions:
