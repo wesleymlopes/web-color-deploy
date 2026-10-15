@@ -12,6 +12,7 @@ spec:
     chart: prometheus
     targetRevision: 27.1.0
     helm:
+      releaseName: prometheus
       parameters:
         - name: alertmanager.enabled
           value: "false"
@@ -19,8 +20,21 @@ spec:
           value: "false"
         - name: server.persistentVolume.enabled
           value: "false"
-      releaseName: prometheus
-      namespace: monitoramento
+        - name: server.service.type
+          value: "LoadBalancer"
+        - name: server.service.servicePort
+          value: "80"
+      values: |
+        server:
+          service:
+            type: LoadBalancer
+            port: 80
+            targetPort: 9090
+            annotations:
+              service.beta.kubernetes.io/do-loadbalancer-name: "prometheus-lb"
+              service.beta.kubernetes.io/do-loadbalancer-size-slug: "lb-small"
+          persistentVolume:
+            enabled: false
 
   destination:
     server: https://1ac86603-f225-4ab1-8852-a770e851dea0.k8s.ondigitalocean.com
