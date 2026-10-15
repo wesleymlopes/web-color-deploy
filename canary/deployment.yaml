@@ -25,12 +25,14 @@ spec:
     metadata:
       labels:
         app: webcolor
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "80"
+    prometheus.io/path: "/metrics"
     spec:
-      imagePullSecrets:
-      - name: ocir-secret
       containers:
       - name: webcolor
-        image: gru.ocir.io/grglog7bpvjm/web-color:blue
+        image: fabricioveronez/web-color:blue
         ports:
         - containerPort: 80
   minReadySeconds: 30
@@ -38,7 +40,7 @@ spec:
     canary:
       steps:
       - setWeight: 25
-      - pause: {duration: 30s}
+      - pause: {}
       - setWeight: 50
       - pause: {duration: 30s}
       - setWeight: 75
