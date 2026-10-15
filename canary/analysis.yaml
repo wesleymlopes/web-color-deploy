@@ -11,7 +11,7 @@ spec:
       failureCondition: result < 80
       provider:
         prometheus:
-          address: http://prometheus.monitoramento.svc.cluster.local:80 
+          address: http://prometheus-server.monitoramento.svc.cluster.local:80 
           query: |
             scalar(
               sum(rate(flask_http_request_total{app="webcolor",status=~"2.."}[2m]))
